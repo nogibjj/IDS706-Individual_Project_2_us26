@@ -1,16 +1,22 @@
-install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+# Variables
+CARGO = cargo
+
+# Targets
+.PHONY: all build test format lint clean
+
+all: build
+
+build:
+	$(CARGO) build
 
 test:
-	python -m pytest -vv --cov=main *.py
+	$(CARGO) test
 
-format:	
-	black mylib/*.py 
-	black *.py
+format:
+	$(CARGO) fmt -- --check
 
 lint:
-	ruff mylib/*.py
-	ruff *.py
-		
-all: install test format lint
+	$(CARGO) clippy -- -D warnings
+
+clean:
+	$(CARGO) clean
