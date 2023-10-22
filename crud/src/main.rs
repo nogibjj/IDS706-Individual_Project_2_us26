@@ -19,7 +19,9 @@ fn main() -> Result<()> {
         // Read and execute SQL queries from the command line
         let mut input = String::new();
         println!("Enter an SQL query (or 'exit' to quit):");
-        io::stdin().read_line(&mut input).expect("Failed to read input");
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
 
         if input.trim() == "exit" {
             break;
