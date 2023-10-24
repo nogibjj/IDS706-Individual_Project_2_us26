@@ -13,7 +13,7 @@ format:
 	cargo fmt --quiet
 
 lint:
-	cargo clippy --quiet
+	cargo clippy --quiet --manifest-path ./crud/Cargo.toml
 
 clean:
 	cargo clean
