@@ -58,7 +58,42 @@ fn main() -> Result<(), Box<dyn Error>> {
         }
 
         match conn.execute_batch(query) {
-            Ok(_) => println!("Query executed successfully."),
+            Ok(_) => {
+                println!("Query executed successfully.");
+
+                if query.to_lowercase().starts_with("select") {
+                    let mut stmt = conn.prepare(&query)?;
+                
+                    // Get the column names
+                    let columns: Vec<String> = stmt.column_names()
+                        .iter()
+                        .map(|col_name| col_name.to_string())
+                        .collect();
+                
+                    let header = columns.join(" | ");
+                    println!("{}", header);
+                
+                    let rows = stmt.query_map([], |row| {
+                        let values: Vec<String> = columns.iter().enumerate().map(|(i, _)| {
+                            match row.get(i) {
+                                Ok(value) => value,
+                                Err(_) => "NULL".to_string(), // Handle NULL values if necessary.
+                            }
+                        }).collect();
+                        Ok(values)
+                    })?;
+                
+                    for row in rows {
+                        if let Ok(row_data) = row {
+                            let row_str = row_data.join(" | ");
+                            println!("{}", row_str);
+                        }
+                    }
+                }
+                            
+                
+                
+            }
             Err(err) => eprintln!("Error executing query: {}", err),
         }
     }
