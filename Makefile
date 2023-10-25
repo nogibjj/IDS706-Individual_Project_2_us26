@@ -7,10 +7,10 @@ build:
 	cargo build --release
 
 test:
-	cargo test --quiet
+	cargo test --quiet --manifest-path ./crud/Cargo.toml
 
 format:
-	cargo fmt --quiet
+	cargo fmt --manifest-path ./crud/Cargo.toml
 
 lint:
 	cargo clippy --quiet --manifest-path ./crud/Cargo.toml

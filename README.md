@@ -1,4 +1,4 @@
-## Python script that interacts with a SQL database.
+## Rust CLI Binary with SQLite
 
 <p align="center">
   <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/schema.png" alt="schema">
@@ -42,14 +42,29 @@ Here is an overview of CRUD operations:
 
 1. create.py
     This script is used for load and transform. A databased called 'ranking.db' with a table named 'universities' is created and a csv file is loaded into that table.
+
+2. To begin running the code after successfully building using 
+      - Cargo build 
+  Run the command 
+      - cargo run main.rs
+The ouput from this command will be :
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/run.png" alt="schema">
+</p>
+
+Here we can directly input the sql command and interact with the database
+
 2. read.py
-    This script is used to interact with the SQL database. The queries used are :
+  The queries used are :
     - SELECT "Name of University" FROM universities WHERE
       "Location" == "United States"
     - SELECT "Name of University", "No of student per staff" FROM
       universities WHERE "No of student per staff" > 40.0
     - SELECT "Name of University", "No of student per staff" FROM
         universities WHERE ("No of student per staff" < 40.0) AND ("Location" == "Canada")
+
+    
 3. update.py
     Updating of tuple values already present in the table.
 
