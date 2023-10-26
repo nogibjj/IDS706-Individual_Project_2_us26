@@ -44,6 +44,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("CSV data imported into the SQLite database.");
 
+    // Rename the columns using SQL
+    conn.execute("ALTER TABLE data RENAME TO data_old", [])?;
+    conn.execute(
+        "CREATE TABLE data AS SELECT column1 AS rank, column2 AS university, column3 AS location FROM data_old",
+        [],
+    )?;
+    conn.execute("DROP TABLE data_old", [])?;
+
     // Allow SQL queries from the terminal
     loop {
         let mut input = String::new();
@@ -63,16 +71,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 
                 if query.to_lowercase().starts_with("select") {
                     let mut stmt = conn.prepare(&query)?;
-                
+
                     // Get the column names
                     let columns: Vec<String> = stmt.column_names()
                         .iter()
                         .map(|col_name| col_name.to_string())
                         .collect();
-                
+
                     let header = columns.join(" | ");
                     println!("{}", header);
-                
+
                     let rows = stmt.query_map([], |row| {
                         let values: Vec<String> = columns.iter().enumerate().map(|(i, _)| {
                             match row.get(i) {
@@ -82,7 +90,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                         }).collect();
                         Ok(values)
                     })?;
-                
+
                     for row in rows {
                         if let Ok(row_data) = row {
                             let row_str = row_data.join(" | ");
@@ -90,9 +98,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                         }
                     }
                 }
-                            
-                
-                
             }
             Err(err) => eprintln!("Error executing query: {}", err),
         }
