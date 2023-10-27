@@ -14,7 +14,7 @@
 1. **Rust source code**
 Rust Initiation using cargo init
 
-initialize a new Rust project by running ‘cargo init` inside the directory, it will set up a new Rust project by:
+Initialize a new Rust project by running ‘cargo init` inside the directory, it will set up a new Rust project by:
 
 Creating a Cargo.toml file, which contains configuration data, dependencies, and other metadata about the Rust project.
 
@@ -28,7 +28,11 @@ Here's how the toml file looks:
 
 2. **Usage of Github Copilot**
     2.1 Creating main.rs
-    The rust file main.rs has been created with the help of copilot. The week5 mini project has the python code to perform CRUD operation using sqlite. The copilot helped me in translating it into rust 
+    The rust file main.rs has been created with the help of copilot. The week5 mini project has the python code to perform CRUD operation using sqlite. The copilot helped me in translating it into rust code and performing the required action from CLI
+    2.2 The dependencies and packages required for Cargo.toml was added using copilot.
+    2.3 It also helped me in understanding the usage of cargo commands.
+    2.4 The Makefile commands had to changes for building, tetsing, formating and liniting. The copilot again was useful with the suggestion
+
 3. create.py
     This script is used for load and transform. A databased called 'ranking.db' with a table named 'data' is created and a csv file is loaded into that table.
 
@@ -85,10 +89,7 @@ Here we can directly input the sql command and interact with the database
 </p>
 
 
-
-8. test_graph.py
-    ** pd.read_sql_query **  is used for creating visualisation.
-    It is a function used to read SQL query or database table into DataFrame.
+8. Optimized Rust Binary
    
 9. Makefile with the following actions:
 
