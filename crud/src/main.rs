@@ -6,9 +6,9 @@ use rusqlite::{Connection, Result};
 use std::env;
 use std::error::Error;
 use std::fs::File;
-use std::process;
 use std::io;
 use std::io::Write;
+use std::process;
 
 fn main() -> Result<(), Box<dyn Error>> {
     // Get the SQLite database file path and CSV file path from command-line arguments
@@ -73,7 +73,8 @@ fn main() -> Result<(), Box<dyn Error>> {
                     let mut stmt = conn.prepare(&query)?;
 
                     // Get the column names
-                    let columns: Vec<String> = stmt.column_names()
+                    let columns: Vec<String> = stmt
+                        .column_names()
                         .iter()
                         .map(|col_name| col_name.to_string())
                         .collect();
@@ -82,12 +83,16 @@ fn main() -> Result<(), Box<dyn Error>> {
                     println!("{}", header);
 
                     let rows = stmt.query_map([], |row| {
-                        let values: Vec<String> = columns.iter().enumerate().map(|(i, _)| {
-                            match row.get(i) {
-                                Ok(value) => value,
-                                Err(_) => "NULL".to_string(), // Handle NULL values if necessary.
-                            }
-                        }).collect();
+                        let values: Vec<String> = columns
+                            .iter()
+                            .enumerate()
+                            .map(|(i, _)| {
+                                match row.get(i) {
+                                    Ok(value) => value,
+                                    Err(_) => "NULL".to_string(), // Handle NULL values if necessary.
+                                }
+                            })
+                            .collect();
                         Ok(values)
                     })?;
 

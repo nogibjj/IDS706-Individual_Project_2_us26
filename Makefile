@@ -1,10 +1,10 @@
 # Targets
 .PHONY: all build test format lint clean
 
-all: build
+all: build test format lint clean
 
 build:
-	cargo ./crud/build --release
+	cargo build --manifest-path=crud/Cargo.toml
 
 test:
 	cargo test --quiet --manifest-path ./crud/Cargo.toml
@@ -16,7 +16,7 @@ lint:
 	cargo clippy --quiet --manifest-path ./crud/Cargo.toml
 
 clean:
-	cargo clean
+	cargo clean --manifest-path ./crud/Cargo.toml
 
 # Generate and push changes to GitHub
 generate_and_push:

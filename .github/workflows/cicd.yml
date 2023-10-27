@@ -17,14 +17,8 @@ jobs:
           profile: minimal
           components: clippy, rustfmt
           override: true
-    - name: update linux
-      run: sudo apt update 
-    - name: update Rust
-      run: make install
-    - name: Check Rust versions
-      run: make rust-version
     - name: build Rust
-      run: make release
+      run: make build
     - name: Format
       run: make format
     - name: Lint
