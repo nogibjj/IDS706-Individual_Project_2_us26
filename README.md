@@ -27,8 +27,8 @@ Here's how the toml file looks:
 </p>
 
 2. **Usage of Github Copilot**
-    2.1 Creating main.rs
-   	 The rust file main.rs has been created with the help of copilot. The week5 mini project has the python code to perform CRUD operation using sqlite. The copilot helped me in translating it into rust code 	and performing the required action from CLI
+   
+    2.1 Creating main.rs. The rust file main.rs has been created with the help of copilot. The week5 mini project has the python code to perform CRUD operation using sqlite. The copilot helped me in translating 	it into rust code and performing the required action from CLI
     2.2 The dependencies and packages required for Cargo.toml was added using copilot.
     2.3 It also helped me in understanding the usage of cargo commands.
     2.4 The Makefile commands had to changes for building, tetsing, formating and liniting. The copilot again was useful with the suggestion
