@@ -11,7 +11,7 @@
 
 ### Code Description
 
-1. *** Rust source code ***
+1. **Rust source code**
 Rust Initiation using cargo init
 
 initialize a new Rust project by running ‘cargo init` inside the directory, it will set up a new Rust project by:
@@ -26,17 +26,17 @@ Here's how the toml file looks:
   <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/packages.png" alt="schema">
 </p>
 
-2. *** Usage of Github Copilot ***
+2. **Usage of Github Copilot**
     2.1 Creating main.rs
     The rust file main.rs has been created with the help of copilot. The week5 mini project has the python code to perform CRUD operation using sqlite. The copilot helped me in translating it into rust 
-2. create.py
+3. create.py
     This script is used for load and transform. A databased called 'ranking.db' with a table named 'data' is created and a csv file is loaded into that table.
 
 <p align="center">
   <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/create.png" alt="schema">
 </p>
 
-3. To begin running the code after successfully building using 
+4. To begin running the code after successfully building using 
       - Cargo build 
   Run the command 
       - cargo run main.rs
@@ -48,7 +48,7 @@ The ouput from this command will be :
 
 Here we can directly input the sql command and interact with the database
 
-4. read.py
+5. read.py
   The queries used are :
     - SELECT "Name of University" FROM universities WHERE
       "Location" == "United States"
@@ -69,14 +69,14 @@ Here we can directly input the sql command and interact with the database
   <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/read3.png" alt="schema">
 </p>
     
-5. update.py
+6. update.py
     Updating of tuple values already present in the table.
 
 <p align="center">
   <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/update.png" alt="schema">
 </p>
 
-6. delete.py
+7. delete.py
     Deletion of data present in the table. The query used is :
       DELETE FROM universities WHERE "Industry Income Score" < 90.0
 
@@ -86,11 +86,11 @@ Here we can directly input the sql command and interact with the database
 
 
 
-6. test_graph.py
+8. test_graph.py
     ** pd.read_sql_query **  is used for creating visualisation.
     It is a function used to read SQL query or database table into DataFrame.
    
-7. Makefile with the following actions:
+9. Makefile with the following actions:
 
 	- build:
 <p align="center">
@@ -113,7 +113,7 @@ Here we can directly input the sql command and interact with the database
 </p>
 
 
-8.Created GitHub Actions that performs all four Makefile commands with badges for each one in the README.md
+10.Created GitHub Actions that performs all four Makefile commands with badges for each one in the README.md
 
 ##### Action include the general CI/CD process in test.yml file, which automatically generate the graph and markdown
 
