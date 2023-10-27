@@ -4,7 +4,7 @@
 all: build
 
 build:
-	cargo build --release
+	cargo ./crud/build --release
 
 test:
 	cargo test --quiet --manifest-path ./crud/Cargo.toml

@@ -64,13 +64,33 @@ Here we can directly input the sql command and interact with the database
     - SELECT "Name of University", "No of student per staff" FROM
         universities WHERE ("No of student per staff" < 40.0) AND ("Location" == "Canada")
 
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/read1.png" alt="schema">
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/read2.png" alt="schema">
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/read3.png" alt="schema">
+</p>
     
 3. update.py
     Updating of tuple values already present in the table.
 
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/update.png" alt="schema">
+</p>
+
+
 4. delete.py
     Deletion of data present in the table. The query used is :
       DELETE FROM universities WHERE "Industry Income Score" < 90.0
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/delete.png" alt="schema">
+</p>
 
 6. test_graph.py
     ** pd.read_sql_query **  is used for creating visualisation.
@@ -82,22 +102,10 @@ Here we can directly input the sql command and interact with the database
 
 	- test:
 
-	python -m pytest -vv --cov=main *.py
-<p align="center">
-  <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/test.png" alt="install">
-</p>
-
 	- format: using black formatter
 
-<p align="center">
-  <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/format.png" alt="format">
-</p>
+  - lint: using ruff 
 
-      - lint: using ruff 
-
-<p align="center">
-  <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/lint.png" alt="lint">
-</p>	
 
 7.Created GitHub Actions that performs all four Makefile commands with badges for each one in the README.md
 
