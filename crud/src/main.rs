@@ -38,7 +38,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let record = result?;
         conn.execute(
             "INSERT INTO data (column1, column2, column3) VALUES (?1, ?2, ?3)",
-            &[&record[0], &record[1], &record[2]],
+            [&record[0], &record[1], &record[2]],
         )?;
     }
 
@@ -70,7 +70,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 println!("Query executed successfully.");
 
                 if query.to_lowercase().starts_with("select") {
-                    let mut stmt = conn.prepare(&query)?;
+                    let mut stmt = conn.prepare(query)?;
 
                     // Get the column names
                     let columns: Vec<String> = stmt
