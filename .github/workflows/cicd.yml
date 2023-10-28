@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: optimized-binary
-        path: target/release/crud
+        path: target/release/IDS706-Individual_Project_2_us26
     - name: pull repository
       run: git pull
     - name: add rust logs
