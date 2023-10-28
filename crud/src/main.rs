@@ -1,8 +1,8 @@
-extern crate csv;
-extern crate rusqlite;
 extern crate crud; // Replace with your actual project name
-extern crate log;
+extern crate csv;
 extern crate env_logger;
+extern crate log;
+extern crate rusqlite;
 
 use csv::Reader;
 use rusqlite::{Connection, Result};
@@ -13,9 +13,7 @@ use std::io;
 use std::io::Write;
 use std::process;
 
-
 fn main() -> Result<(), Box<dyn Error>> {
-
     // Get the SQLite database file path and CSV file path from command-line arguments
     let args: Vec<String> = env::args().collect();
     if args.len() < 3 {
