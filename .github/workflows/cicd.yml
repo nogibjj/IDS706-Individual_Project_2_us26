@@ -24,14 +24,27 @@ jobs:
     - name: Lint
       run: make lint
     - name: Test
-      run: make test
-    - name: Archive Binary
+      run: make test   
+    - name: Build
+      run: | 
+        echo "Hello, world!" > output.txt
+
+    - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: optimized-binary
-        path: target/release/IDS706-Individual_Project_2_us26
-    - name: pull repository
-      run: git pull
-    - name: add rust logs
-      run: make generate_and_push
-    
+        name: my-artifact
+        path: output.txt
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
+        path: downloaded-artifact
+
+    - name: Display Artifact
+      run: cat downloaded-artifact/output.txt
