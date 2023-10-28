@@ -1,5 +1,8 @@
 extern crate csv;
 extern crate rusqlite;
+extern crate crud; // Replace with your actual project name
+extern crate log;
+extern crate env_logger;
 
 use csv::Reader;
 use rusqlite::{Connection, Result};
@@ -10,7 +13,9 @@ use std::io;
 use std::io::Write;
 use std::process;
 
+
 fn main() -> Result<(), Box<dyn Error>> {
+
     // Get the SQLite database file path and CSV file path from command-line arguments
     let args: Vec<String> = env::args().collect();
     if args.len() < 3 {
@@ -95,7 +100,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                             .collect();
                         Ok(values)
                     })?;
-
                     for row in rows {
                         if let Ok(row_data) = row {
                             let row_str = row_data.join(" | ");
