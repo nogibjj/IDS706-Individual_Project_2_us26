@@ -88,8 +88,22 @@ Here we can directly input the sql command and interact with the database
 </p>
 
 
-8. Optimized Rust Binary
-   
+8. **Optimized Rust Binary**
+Included a process that generates an optimized Rust binary as a GitHub Actions artifact that can be downloaded.
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/artifacts1.png" alt="schema">
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/artifacts2.png" alt="schema">
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/nogibjj/IDS706-Individual_Project_2_us26/blob/main/images/artifacts3.png" alt="schema">
+</p>
+
+
 9. Makefile with the following actions:
 
 	- build:
