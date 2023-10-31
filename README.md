@@ -1,7 +1,6 @@
 ## Rust CLI Binary with SQLite
 
-[![Rust CI/CD](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/cicd.yml)
-
+[![Rust CI/CD](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/cicd.yml)  [![Build and Test](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/binary.yml/badge.svg)](https://github.com/nogibjj/IDS706-Individual_Project_2_us26/actions/workflows/binary.yml)
 <p align="center">
   <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/schema.png" alt="schema">
 </p>
