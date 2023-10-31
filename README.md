@@ -127,11 +127,3 @@ Included a process that generates an optimized Rust binary as a GitHub Actions a
 </p>
 
 
-10.Created GitHub Actions that performs all four Makefile commands with badges for each one in the README.md
-
-##### Action include the general CI/CD process in test.yml file, which automatically generate the markdown
-
-<p align="center">
-  <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/ci_cd.png" alt="cicd">
-</p>
-
