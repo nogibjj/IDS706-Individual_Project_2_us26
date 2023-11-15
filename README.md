@@ -5,7 +5,7 @@
   <img width="600" src="https://github.com/nogibjj/IDS-Week5_MiniProject_us26/blob/main/images/schema.png" alt="schema">
 </p>
 
-[Video](!https://youtu.be/ZEgIwwAhGJo)
+[Video](https://www.youtube.com/watch?v=ZEgIwwAhGJo)
 
 ### Overview
 
